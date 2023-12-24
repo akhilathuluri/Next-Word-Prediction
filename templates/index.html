@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Generation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Bootstrap JS (Popper.js and Bootstrap JS) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="box">
+        <div class="inner-box">
+          <div class="forms-wrap">
+            <form action="/generate" method="post" autocomplete="off" class="sign-in-form">
+              <div class="logo">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="easyclass" />
+                <h4>Next Word</h4>
+              </div>
+
+              <div class="heading">
+                <h2>Welcome Back</h2>
+                
+              </div>
+
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <input
+                    type="text"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    id="input_text" 
+                    name="input_text"
+                    required
+                  />
+                  <label for="input_text">Enter Your Text</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    type="number"
+                    min="5"
+                    class="input-field"
+                    autocomplete="off"
+                    id="predict_next_words" 
+                    name="predict_next_words"
+                    required
+                  />
+                  <label for="predict_next_words">Enter No.Of Words</label>
+                </div>
+
+                <input type="submit" value="Generate" class="sign-btn" />
+
+                {% if input_text %}
+                <h2 class="user__generated-title">Generated Text:</h2>
+                <b></b><p class="text" style="color: black; font-size: larger;">
+                  {{ input_text }}
+                </p></b>
+                {% endif %}
+              </div>
+            </form>
+
+            <form action="index.html" autocomplete="off" class="sign-up-form">
+              <div class="logo">
+                <img src="./img/logo.png" alt="easyclass" />
+                <h4>easyclass</h4>
+              </div>
+
+              <div class="heading">
+                <h2>Get Started</h2>
+                <h6>Already have an account?</h6>
+                <a href="#" class="toggle">Sign in</a>
+              </div>
+
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <input
+                    type="text"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Name</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    type="email"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Email</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    type="password"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Password</label>
+                </div>
+
+                <input type="submit" value="Sign Up" class="sign-btn" />
+
+                <p class="text">
+                  By signing up, I agree to the
+                  <a href="#">Terms of Services</a> and
+                  <a href="#">Privacy Policy</a>
+                </p>
+              </div>
+            </form>
+          </div>
+
+          <!-- Bootstrap Carousel -->
+       <!-- Bootstrap Carousel -->
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Images Wrapper -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="d-flex align-items-center justify-content-center h-100">
+        <div class="teammates-container text-center">
+          <h5>KONDAPARTHI CHERITHA       2111CS010088</h5>
+          <h5>ABHIJITH REDDY PONNALA     2111CS010005</h5>
+          <h5>ATHULURI AKHIL             2111CS010031</h5>
+          <h5>ODDULA AKSHITH REDDY       2111CS010037</h5>
+        </div>
+      </div>
+      <!-- <img src="{{ url_for('static', filename='img/image1.png') }}" class="d-block w-100" alt="Slide 1"> -->
+    </div>
+
+    <div class="carousel-item">
+        <div class="d-flex align-items-center justify-content-center h-100">
+          <div class="teammates-container text-center">
+            <h5>Python <img src="{{ url_for('static', filename='img/python.png') }}" height="30" width="30" alt=""></h5>
+            <h5>TensorFlow <img src="{{ url_for('static', filename='img/tensorflow.png') }}" height="30" width="30" alt=""></h5>
+            <h5>Numpy <img src="{{ url_for('static', filename='img/numpy.png') }}" height="30" width="30" alt=""></h5>
+            <h5>Flask <img src="{{ url_for('static', filename='img/flask.png') }}" height="30" width="30" alt=""></h5>
+          </div>
+        </div>
+        <!-- <img src="{{ url_for('static', filename='img/image2.png') }}" class="d-block w-100" alt="Slide 2"> -->
+    </div>
+
+    <div class="carousel-item">
+      <div class="d-flex align-items-center justify-content-center h-100">
+        <div class="teammates-container text-center">
+          <h3>Guided By:</h3>
+          <h5>Mrs. P. Sabitha</h5>
+        </div>
+      </div>
+      <!-- <img src="{{ url_for('static', filename='img/image3.png') }}" class="d-block w-100" alt="Slide 3"> -->
+    </div>
+  </div>
+
+  <!-- Text Slider -->
+  <div class="text-slider">
+
+    <!-- Text Wrap -->
+    <div class="text-wrap">
+
+      <!-- Text Group -->
+      <div class="text-group">
+        <h2 id="text1">Designed And Developed By</h2>
+        <h2 id="text2">Technology Stack</h2>
+        <h2 id="text3">Guided By</h2>
+      </div>
+
+    </div>
+
+    <!-- Bullets -->
+    <div class="bullets">
+      <span class="active" data-bs-target="#myCarousel" data-bs-slide-to="0"></span>
+      <span data-bs-target="#myCarousel" data-bs-slide-to="1"></span>
+      <span data-bs-target="#myCarousel" data-bs-slide-to="2"></span>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+
+</div>
+
+<!-- Include Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+<!-- jQuery (if not already included) -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- Script to Update Text on Carousel Slide Change -->
+<script>
+  $(document).ready(function() {
+    $('#myCarousel').on('slid.bs.carousel', function () {
+      // Get the active index of the carousel
+      var activeIndex = $('.carousel-inner .carousel-item.active').index();
+
+      // Update the text based on the index
+      updateTextBasedOnIndex(activeIndex);
+    });
+
+    // Function to update text based on the index
+    function updateTextBasedOnIndex(index) {
+      var textArray = [
+        "Designed And Developed By",
+        "Technology Stack",
+        "Guided By"
+      ];
+
+      // Update the text based on the index
+      $('.text-group h2').each(function(i) {
+        $(this).text(textArray[index]);
+      });
+    }
+  });
+</script>
+
+
+
+
+
+        </div>
+      </div>
+    </main>
+
+    <!-- Javascript file -->
+  </body>
+</html>
